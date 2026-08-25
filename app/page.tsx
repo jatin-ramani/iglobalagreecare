@@ -1,69 +1,9 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+import Image from"next/image";import Link from"next/link";import{Photo}from"@/components/ui";import{Reveal}from"@/components/reveal";import{categories}from"@/lib/data";
+const vision=[{n:"01",t:"Sustainable adoption",c:"Encourage responsible farming and gardening with effective organic alternatives."},{n:"02",t:"Soil vitality",c:"Build lasting fertility, healthier roots, and stronger harvests through natural nutrition."},{n:"03",t:"Less synthetic input",c:"Reduce reliance on harsh chemicals while protecting biodiversity and ecosystem health."},{n:"04",t:"Empowered growers",c:"Give farmers, gardeners, and landowners affordable tools for resilient cultivation."}];
+export default function Home(){return <Reveal><section className="relative min-h-[760px] text-white"><Image src="/client/hero-golden-wheat-v3.jpg" alt="Golden wheat field glowing in warm sunset light" fill priority sizes="100vw" className="object-cover"/><div className="absolute inset-0 bg-linear-to-r from-[#102719]/90 via-[#102719]/60 to-[#102719]/20"/><div className="container-site relative flex min-h-[760px] items-center pt-24"><div className="max-w-3xl"><p className="eyebrow inline-block rounded-full border border-white/35 px-4 py-2 text-white">Natural organic fertilizer</p><h1 className="mt-8 text-6xl font-medium leading-[.88] tracking-[-.04em] sm:text-7xl lg:text-8xl">Healthier soil.<br/><em className="text-[#e9bb84]">Greener future.</em></h1><p className="mt-7 max-w-xl text-sm leading-7 text-white/80 sm:text-base">Premium Cow Dung Manure—an all-natural, nutrient-rich solution designed to improve soil structure, nourish roots, and help plants thrive.</p><div className="mt-9 flex flex-wrap gap-3"><Link href="/products" className="rounded-full bg-gold px-6 py-3 text-xs font-bold uppercase tracking-wider">Discover our products</Link><Link href="/contact" className="rounded-full border border-white/45 px-6 py-3 text-xs font-bold uppercase tracking-wider">Contact us</Link></div></div></div><span className="absolute bottom-9 left-1/2 -translate-x-1/2 text-[9px] uppercase tracking-[.25em] text-white/60">Scroll to explore ↓</span></section>
+<section className="bg-[#f8f5ee] py-24 md:py-32"><div className="container-site grid items-center gap-14 lg:grid-cols-[.95fr_1.05fr]"><div><p className="eyebrow">Welcome to IGLOBALAGREECARE</p><h2 className="section-title">About our<br/><em className="text-leaf">Cow Dung Manure</em></h2><p className="mt-7 text-sm leading-7 text-ink/65">Our premium manure is rich in organic matter and essential nutrients including nitrogen, phosphorus, and potassium. It improves soil structure, retains moisture, supports healthy root growth, and encourages beneficial microbial activity.</p><p className="mt-4 text-sm leading-7 text-ink/65">Ideal for farms, gardens, lawns, and landscapes, it offers an effective organic alternative for cultivating vibrant, healthy plants naturally.</p><div className="mt-9 grid grid-cols-3 gap-4 border-t border-forest/10 pt-6 text-center"><div><b className="font-display text-2xl text-leaf">N-P-K</b><p className="text-[9px] uppercase tracking-wider text-ink/45">Rich nutrients</p></div><div><b className="font-display text-2xl text-leaf">100%</b><p className="text-[9px] uppercase tracking-wider text-ink/45">Natural</p></div><div><b className="font-display text-2xl text-leaf">Eco</b><p className="text-[9px] uppercase tracking-wider text-ink/45">Friendly</p></div></div></div><div className="relative mx-auto w-full max-w-[520px] pb-16 pl-14"><Photo src="/client/img-29.jpeg" alt="Healthy green crop grown with organic manure" className="aspect-square rounded-2xl"/><Photo src="/client/img-30.jpeg" alt="Farmer applying organic manure to soil" className="absolute bottom-0 left-0 aspect-[4/5] w-[45%] rounded-2xl border-8 border-[#f8f5ee] shadow-xl"/><span className="absolute bottom-7 right-2 rounded-lg bg-leaf px-5 py-3 font-display text-lg italic text-white shadow-lg">Purely natural.<br/>Powerfully effective.</span></div></div></section>
+<div className="overflow-hidden border-y border-gold/25 bg-[#efe7d9] py-4"><div className="flex min-w-max gap-8 font-display text-2xl italic text-leaf">{["Sustainable agriculture","Soil regeneration","Organic farming","Eco-friendly growth","Sustainable agriculture","Soil regeneration"].map((x,i)=><span key={i}>{x}<b className="ml-8 text-gold">✦</b></span>)}</div></div>
+<section className="bg-forest py-24 text-white md:py-32"><div className="container-site grid gap-14 lg:grid-cols-[.72fr_1.28fr]"><div><p className="eyebrow">Our purpose</p><h2 className="section-title">Growing a<br/><em className="text-[#e9bb84]">greener future</em></h2></div><div className="space-y-9">{[["01","Natural plant nutrition","Essential nutrients support vigorous plant growth, stronger roots, and fruitful harvests without harmful chemicals."],["02","Healthier living soil","Organic matter improves structure, drainage, moisture retention, and microbial activity for long-term fertility."],["03","Sustainable cultivation","Accessible organic solutions help farmers and gardeners reduce environmental impact while improving productivity."]].map(([n,t,c])=><article className="grid gap-4 border-b border-white/10 pb-8 sm:grid-cols-[64px_1fr]" key={n}><b className="font-display text-2xl text-gold">{n}</b><div><h3 className="text-2xl font-medium">{t}</h3><p className="mt-3 text-sm leading-7 text-white/60">{c}</p></div></article>)}</div></div></section>
+<section className="bg-[#f8f5ee] py-24 md:py-32"><div className="container-site"><div className="grid gap-8 lg:grid-cols-2"><div><p className="eyebrow">Our vision</p><h2 className="section-title">A future rooted<br/><em className="text-leaf">in nature</em></h2></div><p className="max-w-md self-end text-sm leading-7 text-ink/60">We envision a world where every grower can choose locally rooted, organic solutions that build resilient communities and a sustainable agricultural future.</p></div><div className="mt-14 grid gap-4 md:grid-cols-2">{vision.map(v=><article className="rounded-2xl border border-forest/8 bg-white p-7" key={v.n}><b className="font-display text-2xl text-gold">{v.n}</b><h3 className="mt-4 text-2xl font-medium text-leaf">{v.t}</h3><p className="mt-3 text-sm leading-6 text-ink/55">{v.c}</p></article>)}</div></div></section>
+<section className="bg-[#f1ece2] py-24 md:py-32"><div className="container-site"><div className="grid gap-8 lg:grid-cols-2"><div><p className="eyebrow">Our portfolio</p><h2 className="section-title">What we make<br/><em className="text-leaf">possible</em></h2></div><p className="max-w-md self-end text-sm leading-7 text-ink/60">From our flagship cow dung manure to customized large-farm support, each solution follows the principles of responsible organic farming.</p></div><div className="mt-14 grid gap-5 sm:grid-cols-2">{categories.map(c=><article className="group overflow-hidden rounded-2xl bg-white" key={c.slug}><Photo src={c.image} alt={c.name} className="aspect-[16/10] transition duration-500 group-hover:scale-105"/><div className="p-6"><span className="text-[9px] font-bold uppercase tracking-[.18em] text-gold">Organic solution</span><h3 className="mt-2 text-3xl font-medium text-leaf">{c.name}</h3><p className="mt-2 text-xs leading-6 text-ink/55">{c.copy}</p><Link href="/products" className="mt-5 inline-block text-xs font-bold uppercase tracking-wider text-leaf">Learn more →</Link></div></article>)}</div></div></section>
+<section className="bg-forest py-20 text-white"><div className="container-site grid items-center gap-10 lg:grid-cols-[.85fr_1.15fr]"><div><p className="eyebrow">Contact us</p><h2 className="section-title">Let’s grow<br/><em className="text-[#e9bb84]">together</em></h2><p className="mt-5 max-w-md text-sm leading-7 text-white/60">Whether you are a farmer, gardener, landscaper, or project partner, we would be glad to understand your needs.</p></div><div className="rounded-2xl bg-[#1f8d4b] p-8 sm:p-10"><span className="text-[10px] font-bold uppercase tracking-widest text-white/60">Direct assistance</span><h3 className="mt-3 text-3xl">Speak with our team</h3><p className="mt-3 text-sm text-white/70">Practical guidance and tailored solutions for your cultivation goals.</p><Link href="/contact" className="mt-7 inline-block rounded-full bg-white px-6 py-3 text-xs font-bold uppercase tracking-wider text-leaf">Get in touch →</Link></div></div></section></Reveal>}

@@ -1,0 +1,1 @@
+import type{MetadataRoute}from"next";export default function sitemap():MetadataRoute.Sitemap{const base=process.env.NEXT_PUBLIC_SITE_URL||"https://www.iglobalagreecare.com";return["","/about","/products","/quality","/global-reach","/gallery","/contact"].map((p,i)=>({url:`${base}${p}`,lastModified:new Date(),changeFrequency:i===0?"weekly":"monthly",priority:i===0?1:.8}))}
