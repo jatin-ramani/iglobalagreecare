@@ -23,7 +23,7 @@ export default function Contact() {
             <div><b className="block text-white">Office</b><p>{contact.address}</p></div>
             <div><b className="block text-white">Website</b><p>{contact.website}</p></div>
           </div>
-          <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 text-xs leading-6 text-white/50">Junagadh, Gujarat, India<br />Monday–Saturday · 09:00–18:00 IST</div>
+          <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 text-xs leading-6 text-white/50">Bhavnagar, Gujarat, India<br />Monday–Saturday · 09:00–18:00 IST</div>
         </aside>
       </div>
     </section>
