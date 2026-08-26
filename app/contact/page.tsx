@@ -1,31 +1,9 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/ui";
 import { QuoteForm } from "@/components/quote-form";
-import { contact } from "@/lib/data";
-
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Contact IGLOBALAGREECARE for cow dung manure and sustainable agriculture solutions.",
-};
-
-export default function Contact() {
-  return <>
-    <PageHero eyebrow="Contact us" title="Let’s grow something better." copy="Tell us about your farm, garden, landscape, or agricultural project. Our team will help identify a practical natural solution." />
-    <section className="bg-[#f8f5ee] py-20 md:py-28">
-      <div className="container-site grid gap-10 lg:grid-cols-[1.25fr_.75fr]">
-        <QuoteForm />
-        <aside className="rounded-3xl bg-forest p-7 text-white sm:p-9">
-          <p className="eyebrow">IGLOBALAGREECARE team</p>
-          <h2 className="mt-4 text-3xl font-medium">Start a conversation.</h2>
-          <div className="mt-8 space-y-6 text-sm leading-7 text-white/60">
-            <div><b className="block text-white">Email</b><a href={`mailto:${contact.email}`}>{contact.email}</a></div>
-            <div><b className="block text-white">Phone</b><a href={`tel:${contact.phone}`}>{contact.phone}</a></div>
-            <div><b className="block text-white">Office</b><p>{contact.address}</p></div>
-            <div><b className="block text-white">Website</b><p>{contact.website}</p></div>
-          </div>
-          <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 text-xs leading-6 text-white/50">Bhavnagar, Gujarat, India<br />Monday–Saturday · 09:00–18:00 IST</div>
-        </aside>
-      </div>
-    </section>
-  </>;
+import { contact, products } from "@/lib/data";
+export const metadata: Metadata = { title: "Contact Us", description: "Contact IGLOBALAGREECARE for product, bulk, sample and partnership enquiries." };
+export default async function Contact({ searchParams }: { searchParams: Promise<{ product?: string }> }) {
+  const { product: slug } = await searchParams; const defaultProduct = products.find((item) => item.slug === slug)?.name || "";
+  return <><PageHero eyebrow="Contact us" title="Let’s discuss your requirement." copy="Share the product, quantity and destination you have in mind. Our team will respond with the information needed to move forward."/><section className="bg-[#f8f5ee] py-20 md:py-28"><div className="container-site grid gap-10 lg:grid-cols-[1.25fr_.75fr]"><QuoteForm defaultProduct={defaultProduct}/><aside className="rounded-3xl bg-forest p-7 text-white sm:p-9"><p className="eyebrow">IGLOBALAGREECARE</p><h2 className="mt-4 text-3xl font-medium">Start a conversation.</h2><div className="mt-8 space-y-6 text-sm leading-7 text-white/60"><div><b className="block text-white">Email</b><a href={`mailto:${contact.email}`}>{contact.email}</a></div><div><b className="block text-white">Phone & WhatsApp</b><a href={`tel:${contact.phone}`}>{contact.phone}</a></div><div><b className="block text-white">Office</b><a href={contact.map} target="_blank" rel="noreferrer">{contact.address}</a></div><div><b className="block text-white">Website</b><p>{contact.website}</p></div></div><div className="mt-8 flex gap-3"><a className="rounded-full bg-[#25D366] px-5 py-3 text-xs font-bold text-white" href={`https://wa.me/${contact.whatsapp}`} target="_blank" rel="noreferrer">WhatsApp</a><a className="rounded-full border border-white/20 px-5 py-3 text-xs font-bold" href={contact.map} target="_blank" rel="noreferrer">Google Maps</a></div></aside></div><div className="mt-12 overflow-hidden rounded-3xl border border-forest/10 bg-white"><iframe title="IGLOBALAGREECARE office location" src="https://www.google.com/maps?q=Ground%20Floor%2050%20Variya%20Ghogha%20Road%20Shivaji%20Circle%20Bhavnagar%20364001&output=embed" className="h-[380px] w-full" loading="lazy" referrerPolicy="no-referrer-when-downgrade"/></div>{/* [CUSTOMIZE: confirm the exact map pin for the business address] */}</section></>;
 }

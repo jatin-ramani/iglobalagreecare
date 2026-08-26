@@ -8,9 +8,9 @@ const editorial = Cormorant_Garamond({ variable: "--font-editorial", subsets: ["
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.iglobalagreecare.com"),
-  title: { default: "IGLOBALAGREECARE | Organic Cow Dung Manure", template: "%s | IGLOBALAGREECARE" },
-  description: "Natural cow dung manure and sustainable soil-enrichment solutions for farms, gardens, and landscapes.",
-  openGraph: { title: "IGLOBALAGREECARE", description: "Natural solutions for healthier soil and thriving plants.", type: "website" },
+  title: { default: "IGLOBALAGREECARE | Indian Agricultural Exports", template: "%s | IGLOBALAGREECARE" },
+  description: "Indian agricultural products, food ingredients and packaging solutions for domestic and global buyers.",
+  openGraph: { title: "IGLOBALAGREECARE", description: "Quality Indian products prepared for global trade.", type: "website" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

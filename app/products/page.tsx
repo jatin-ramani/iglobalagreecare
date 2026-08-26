@@ -1,1 +1,5 @@
-import type{Metadata}from"next";import{ProductsGrid}from"@/components/products-grid";import{PageHero}from"@/components/ui";export const metadata:Metadata={title:"Products",description:"Explore organic manure, compost, soil enrichment, and customized farming solutions."};export default function Products(){return <><PageHero eyebrow="Our portfolio" title="Natural inputs. Healthier outcomes." copy="Organic solutions designed to improve soil structure, support plant vitality, and make sustainable cultivation practical."/><ProductsGrid/></>}
+import type { Metadata } from "next";
+import { PageHero, SectionHead } from "@/components/ui";
+import { ProductsGrid } from "@/components/products-grid";
+export const metadata: Metadata = { title: "Products", description: "Explore IGLOBALAGREECARE agricultural, food ingredient and packaging products." };
+export default function ProductsPage() { return <><PageHero eyebrow="Our products" title="A focused range for global buyers." copy="Browse natural agricultural products, food ingredients, grains and industrial packaging sourced for commercial requirements."/><section className="bg-[#f8f5ee] py-20 md:py-28"><div className="container-site"><SectionHead eyebrow="Complete range" title="Find the right product for your requirement."/><div className="mt-10"><ProductsGrid/></div></div></section></>; }

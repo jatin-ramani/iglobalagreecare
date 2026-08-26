@@ -1,31 +1,8 @@
 import type { Metadata } from "next";
 import { PageHero, Photo, SectionHead } from "@/components/ui";
-
-export const metadata: Metadata = {
-  title: "About Us",
-  description: "Learn about IGLOBALAGREECARE and our commitment to natural soil health and sustainable agriculture.",
-};
-
+import { trustBadges } from "@/lib/data";
+export const metadata: Metadata = { title: "About Us", description: "About IGLOBALAGREECARE, our sourcing values and export process." };
 export default function About() {
-  return <>
-    <PageHero eyebrow="About IGLOBALAGREECARE" title="Natural solutions for thriving land." copy="We help farmers, gardeners, and landowners nurture healthier soil through practical, organic agricultural solutions." />
-    <section className="bg-[#f8f5ee] py-24 md:py-32">
-      <div className="container-site grid items-center gap-14 lg:grid-cols-2">
-        <div>
-          <SectionHead eyebrow="Our story" title="Working with nature, not against it." />
-          <p className="mt-7 text-sm leading-7 text-ink/65">IGLOBALAGREECARE provides premium Cow Dung Manure and complementary organic solutions that enhance soil health and plant vitality naturally. Our work is grounded in a simple belief: productive agriculture and environmental responsibility should grow together.</p>
-          <p className="mt-4 text-sm leading-7 text-ink/65">By offering effective alternatives to chemical fertilizers, we support stronger roots, improved moisture retention, beneficial microbial activity, and more resilient cultivation.</p>
-        </div>
-        <Photo src="/client/img-35.jpeg" alt="Indian farmers working together in a green field" className="aspect-[4/3] rounded-3xl" />
-      </div>
-    </section>
-    <section className="bg-forest py-24 text-white md:py-32">
-      <div className="container-site grid gap-14 lg:grid-cols-[.75fr_1.25fr]">
-        <div><p className="eyebrow">Our commitment</p><h2 className="section-title">Purpose with<br /><em className="text-[#e9bb84]">practical impact</em></h2></div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {[["Mission", "Provide high-quality organic manure that strengthens soil, nourishes plants, and supports better yields."], ["Vision", "Make sustainable cultivation accessible to growers and communities through locally rooted organic solutions."], ["Responsibility", "Help reduce synthetic chemical dependence and preserve soil life, biodiversity, and natural resources."], ["Empowerment", "Give farmers, gardeners, and landowners affordable, effective tools for more resilient cultivation."]].map(([title, copy]) => <article className="rounded-2xl border border-white/10 bg-white/5 p-7" key={title}><h3 className="text-2xl font-medium text-[#e9bb84]">{title}</h3><p className="mt-3 text-sm leading-7 text-white/55">{copy}</p></article>)}
-        </div>
-      </div>
-    </section>
-  </>;
+  const process = [["01","Sourcing","Match buyer needs with suitable Indian suppliers and product lots."],["02","Quality Check","Review the agreed specification and available order documentation."],["03","Packaging","Prepare an appropriate pack format for handling and transit."],["04","Shipping","Coordinate dispatch details and export logistics with clear communication."],["05","Delivery","Support the order through destination handover and follow-up."]];
+  return <><PageHero eyebrow="About IGLOBALAGREECARE" title="Responsible sourcing. Practical global trade." copy="A multi-product Indian export company focused on clear communication, dependable preparation and long-term buyer relationships."/><section className="bg-[#f8f5ee] py-24 md:py-32"><div className="container-site grid items-center gap-14 lg:grid-cols-2"><div><SectionHead eyebrow="Our story" title="A focused partner for diverse sourcing needs."/><p className="mt-7 text-sm leading-7 text-ink/65">IGLOBALAGREECARE was built around a straightforward idea: international buyers should be able to source quality Indian products through one responsive, accountable point of contact. Our portfolio spans natural agricultural products, food ingredients and industrial packaging.</p><p className="mt-4 text-sm leading-7 text-ink/65">We aim to combine growth with responsibility—supporting thoughtful sourcing, practical quality assurance and efficient delivery planning. Rather than treating mission and commerce as separate ideas, we see reliable trade as a way to create durable value for buyers, suppliers and the communities connected to each product.</p><p className="mt-4 text-sm leading-7 text-ink/65">Every enquiry begins with the buyer&apos;s specification. From there, we clarify feasibility, documentation, packing and logistics so expectations remain clear before an order moves forward.</p></div><Photo src="/client/india-farm-community-v1.jpg" alt="Indian agricultural sourcing community" className="aspect-[4/3] rounded-3xl"/></div><div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{trustBadges.map(([number,title,copy]) => <article className="rounded-2xl bg-white p-6" key={title}><b className="font-display text-2xl text-gold">{number}</b><h3 className="mt-4 text-xl font-medium text-leaf">{title}</h3><p className="mt-2 text-xs leading-6 text-ink/55">{copy}</p></article>)}</div></section><section className="bg-white py-24"><div className="container-site"><SectionHead eyebrow="Leadership" title="People behind the business."/><div className="mt-10 grid gap-5 md:grid-cols-2"><article className="rounded-2xl border border-forest/10 bg-[#f8f5ee] p-8"><p className="eyebrow">Founder</p><h3 className="mt-3 text-3xl text-leaf">Name to be confirmed</h3><p className="mt-4 text-sm leading-7 text-ink/55">“Building reliable relationships through responsible sourcing and clear execution.”</p></article><article className="rounded-2xl border border-forest/10 bg-[#f8f5ee] p-8"><p className="eyebrow">Director</p><h3 className="mt-3 text-3xl text-leaf">Name to be confirmed</h3><p className="mt-4 text-sm leading-7 text-ink/55">“Turning buyer requirements into practical product and logistics solutions.”</p></article></div>{/* [CUSTOMIZE: replace with real leadership names, titles, quotes and photos] */}</div></section><section className="bg-forest py-24 text-white md:py-32"><div className="container-site"><p className="eyebrow">Our export process</p><h2 className="section-title">From requirement to delivery.</h2><div className="mt-14 grid gap-4 md:grid-cols-5">{process.map(([number,title,copy]) => <article key={number} className="rounded-2xl border border-white/10 bg-white/5 p-6"><b className="font-display text-2xl text-[#e9bb84]">{number}</b><h3 className="mt-5 text-2xl font-medium">{title}</h3><p className="mt-3 text-xs leading-6 text-white/55">{copy}</p></article>)}</div></div></section></>;
 }

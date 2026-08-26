@@ -1,24 +1,40 @@
 # IGLOBALAGREECARE
 
-Premium responsive website for IGLOBALAGREECARE, built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
+Responsive multi-product export website built with Next.js App Router, TypeScript and Tailwind CSS.
 
 ## Run locally
 
 ```bash
 pnpm install
-cp .env.example .env.local
+copy .env.example .env.local
 pnpm dev
 ```
 
-## Content and assets
+## Inquiry email setup
 
-- `app/` contains all pages, SEO routes, and the inquiry API.
-- `components/` contains the responsive navigation, footer, forms, and reusable UI.
-- `lib/data.ts` contains product and verified contact data.
-- `public/client/` contains locally hosted imagery and the logo extracted from the client presentation.
+Both the homepage quote form and full contact form submit to `app/api/quote/route.ts`. Configure these variables locally and in Vercel:
 
-The website content is based on `Agriculture Presentation.pdf`. Configure the Resend variables in `.env.local` to enable inquiry notifications and customer confirmations.
+```env
+NEXT_PUBLIC_SITE_URL=https://www.iglobalagreecare.com
+RESEND_API_KEY=re_xxxxxxxxx
+EMAIL_FROM=IGLOBALAGREECARE <onboarding@resend.dev>
+BUSINESS_EMAIL=iglobalagreecare2040@gmail.com
+```
 
-## Deploy
+For production sending, verify a domain in Resend and replace `onboarding@resend.dev` with an address on that domain. Never commit the real API key. The forms include a honeypot field for basic bot filtering.
 
-Import the `frontend` directory into Vercel, add the variables from `.env.example`, verify the sending domain in Resend, and deploy.
+## Content structure
+
+- `lib/data.ts` is the source of truth for all 11 products, contact details, FAQs and trust badges.
+- `app/products/[slug]/page.tsx` creates every product detail route.
+- `public/products/` contains locally hosted product imagery.
+- `[CUSTOMIZE]` comments mark certifications, testimonials, leadership, export markets, legal copy and representative product images requiring verified client information.
+
+## Production checklist
+
+- Replace representative Cow Dung Cakes and PP/PET Strapping photographs with real client product images.
+- Confirm certifications before showing badges as held.
+- Add real leadership information, testimonials and export markets.
+- Confirm the exact Google Maps pin.
+- Have Privacy Policy and Terms reviewed by a qualified professional.
+- Add all environment variables in Vercel and test a live inquiry.
