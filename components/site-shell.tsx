@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -169,16 +170,15 @@ export function WhatsApp() {
       target="_blank"
       rel="noreferrer"
       aria-label="Contact us on WhatsApp"
-      className="fixed bottom-5 right-5 z-40 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-white bg-[#25D366] text-white shadow-xl transition-transform duration-200 hover:scale-110 active:scale-95"
+      className="fixed bottom-5 right-5 z-40 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95 drop-shadow-xl"
     >
-      <svg
-        className="h-6 w-6 sm:h-7 sm:w-7 fill-current"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        <path d="M17.472 14.382c-.301-.15-1.783-.88-2.06-.98-.277-.1-.478-.15-.68.15-.201.3-.779.98-.955 1.18-.176.2-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.176-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.175.2-.3.301-.501.101-.2.05-.376-.025-.526-.075-.15-.68-1.637-.93-2.242-.244-.589-.492-.51-.68-.52l-.578-.01c-.2 0-.527.075-.803.376s-1.055 1.03-1.055 2.515 1.08 2.917 1.231 3.118c.15.201 2.125 3.245 5.148 4.552.719.311 1.281.497 1.719.636.723.23 1.381.197 1.901.12.579-.086 1.783-.728 2.034-1.431.251-.703.251-1.305.176-1.431-.076-.126-.277-.201-.578-.351zM12.04 2C6.51 2 2.02 6.49 2.02 12.02c0 1.94.55 3.75 1.51 5.28L2 22l4.83-1.49c1.47.88 3.19 1.39 5.03 1.39 5.53 0 10.02-4.49 10.02-10.02C21.88 6.49 17.57 2 12.04 2zm0 18.35c-1.64 0-3.17-.49-4.46-1.33l-.32-.21-3.3.87.88-3.21-.23-.36c-.95-1.37-1.46-3.02-1.46-4.73 0-4.6 3.74-8.34 8.35-8.34 4.6 0 8.34 3.74 8.34 8.34 0 4.6-3.74 8.34-8.34 8.34z"/>
-      </svg>
+      <Image
+        src="/whatsapp.png"
+        alt="WhatsApp"
+        width={56}
+        height={56}
+        className="h-full w-full object-contain rounded-2xl drop-shadow-md"
+      />
     </a>
   );
 }
