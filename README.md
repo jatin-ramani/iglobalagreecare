@@ -25,7 +25,7 @@ For production sending, verify a domain in Resend and replace `onboarding@resend
 
 ## Content structure
 
-- `lib/data.ts` is the source of truth for all 16 products, contact details, FAQs and trust badges.
+- `lib/data.ts` is the source of truth for all 11 products, contact details, FAQs and trust badges.
 - `app/products/[slug]/page.tsx` creates every product detail route.
 - `public/products/` contains locally hosted product imagery.
 - `[CUSTOMIZE]` comments mark certifications, testimonials, leadership, export markets, legal copy and representative product images requiring verified client information.
