@@ -1,7 +1,7 @@
 export interface Product {
   slug: string;
   title: string;
-  category: "Powders & Superfoods" | "Oils" | "Grains" | "Manure & Biomass" | "Packaging";
+  category: "Powders & Superfoods" | "Oils" | "Grains" | "Manure & Biomass";
   image: string;
   listDescription: string;
   fullDescription: string[];
@@ -15,7 +15,6 @@ export const productCategories = [
   "Oils",
   "Grains",
   "Manure & Biomass",
-  "Packaging",
 ] as const;
 
 export type ProductCategory = (typeof productCategories)[number];
@@ -383,32 +382,6 @@ export const products: Product[] = [
       "Cooking and food service",
       "Packaged food products",
       "Retail",
-    ],
-  },
-  {
-    slug: "pp-pet-strapping-rolls",
-    title: "PP & PET Strapping Rolls",
-    category: "Packaging",
-    image: "/products/PP&PETStrappingRolls.png",
-    listDescription: "Durable PP and PET strapping solutions for bundling, pallet stability and industrial transport.",
-    fullDescription: [
-      "PP & PET Strapping Rolls are durable, high-tensile-strength strapping solutions used for bundling, pallet stabilization, and secure industrial transport.",
-      "Available in polypropylene (PP) and polyester (PET) variants, these rolls are suited for warehouses, logistics companies, and manufacturers needing reliable packaging materials for shipment and storage.",
-    ],
-    specifications: [
-      ["Physical Form", "Rolled strapping band"],
-      ["Material", "PP / PET"],
-      ["Packaging", "[CONFIRM: roll length / width / core size]"],
-      ["Shelf Life", "N/A (durable material)"],
-      ["Minimum Order Quantity", "[CONFIRM]"],
-      ["Country of Origin", "India"],
-      ["Certifications", "[CONFIRM]"],
-      ["HS Code", "[CONFIRM]"],
-    ],
-    applications: [
-      "Pallet bundling",
-      "Industrial packaging",
-      "Logistics and warehousing",
     ],
   },
 ];

@@ -54,7 +54,7 @@ export default function About() {
       <PageHero
         eyebrow="About IGLOBALAGREECARE"
         title="Responsible sourcing. Practical global trade."
-        copy="A multi-product Indian export enterprise delivering quality agricultural products, organic soil inputs, culinary ingredients, and industrial packaging to international buyers."
+        copy="A multi-product Indian export enterprise delivering quality agricultural products, organic soil inputs, culinary ingredients, and superfood powders to international buyers."
       />
 
       {/* Story */}
@@ -68,7 +68,7 @@ export default function About() {
               />
               <div className="mt-6 space-y-4 text-sm leading-7 text-ink/75">
                 <p>
-                  IGLOBALAGREECARE connects international buyers with quality Indian agricultural inputs, superfood powders, pure oils, grains, and industrial packaging solutions through one responsive point of contact.
+                  IGLOBALAGREECARE connects international buyers with quality Indian agricultural inputs, superfood powders, pure edible oils, grains, and organic soil vitalizers through one responsive point of contact.
                 </p>
                 <p>
                   We focus on clear communication, practical quality assurance, and dependable logistics. Every inquiry starts with the buyer&apos;s specification, ensuring feasibility, documentation, and packing compliance before order confirmation.

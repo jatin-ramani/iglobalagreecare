@@ -23,7 +23,7 @@ export default function Home() {
     products.find((p) => p.slug === "yellow-corn-maize")!,
     products.find((p) => p.slug === "peanut-oil-groundnut-oil")!,
     products.find((p) => p.slug === "dry-oyster-mushroom")!,
-    products.find((p) => p.slug === "pp-pet-strapping-rolls")!,
+    products.find((p) => p.slug === "red-chili-powder")!,
   ].filter(Boolean);
 
   const corePillars = [
@@ -98,7 +98,7 @@ export default function Home() {
                 title="Indian agricultural abundance. Global supply excellence."
               />
               <p className="mt-6 text-sm leading-7 text-ink/70">
-                IGLOBALAGREECARE connects commercial importers, wholesalers, and food manufacturers with a curated portfolio of Indian agricultural inputs, superfood powders, pure edible oils, grains, and industrial packaging solutions.
+                IGLOBALAGREECARE connects commercial importers, wholesalers, and food manufacturers with a curated portfolio of Indian agricultural inputs, superfood powders, pure edible oils, grains, and organic soil conditioners.
               </p>
               <p className="mt-4 text-sm leading-7 text-ink/70">
                 We bridge international demand with dedicated farming clusters across Saurashtra and Gujarat, combining responsive trade coordination with disciplined batch testing and complete export documentation.
@@ -168,7 +168,7 @@ export default function Home() {
             <SectionHead
               eyebrow="Export Catalogue"
               title="Featured Indian Export Products."
-              copy="Carefully sourced agricultural inputs, superfood powders, pure culinary oils, grains, and industrial packaging solutions."
+              copy="Carefully sourced agricultural inputs, superfood powders, pure culinary oils, grains, and organic soil amendments."
             />
             <Link
               href="/products"
