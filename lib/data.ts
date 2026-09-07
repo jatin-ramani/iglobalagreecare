@@ -1,4 +1,4 @@
-export type ProductCategory = "Manure & Biomass" | "Grains" | "Powders & Superfoods" | "Packaging";
+export type ProductCategory = "Manure & Biomass" | "Grains" | "Powders & Superfoods" | "Oils" | "Packaging";
 
 export type Product = {
   name: string;
@@ -127,10 +127,60 @@ export const products: Product[] = [
     closing: "A cost-conscious packaging choice for businesses that need dependable load security from warehouse to destination.",
     customizeImage: true,
   },
+  {
+    name: "Groundnut Oil", slug: "groundnut-oil", category: "Oils",
+    tagline: "Clean, golden oil from carefully selected groundnuts.",
+    summary: "Versatile groundnut oil with a mild nutty character for food service, retail and processing.",
+    intro: "Prepared from selected groundnuts, this naturally golden oil offers a balanced flavour and dependable cooking performance. Commercial pack sizes and specifications can be discussed for wholesale and export requirements.",
+    image: "/products/groundnut-oil.jpg",
+    features: ["Pleasant, mild groundnut aroma", "Suitable for high-temperature cooking", "Consistent colour and clarity", "Bulk and buyer-specific packing options"],
+    applications: ["Frying, sautéing and everyday cooking", "Food-service and commercial kitchens", "Packaged foods and retail oil ranges"],
+    closing: "A practical edible oil for buyers seeking reliable quality, familiar flavour and flexible commercial supply.",
+  },
+  {
+    name: "Egg Powder", slug: "egg-powder", category: "Powders & Superfoods",
+    tagline: "Shelf-stable egg functionality for efficient production.",
+    summary: "Fine egg powder for bakery, food manufacturing and convenient large-scale formulation.",
+    intro: "Egg powder offers the functional benefits of fresh egg in a compact, easy-to-handle format. It supports consistent measuring, simplified storage and efficient use across professional food applications.",
+    image: "/products/egg-powder.jpg",
+    features: ["Fine, free-flowing consistency", "Convenient storage and controlled dosing", "Useful binding and enriching properties", "Suitable for commercial formulation"],
+    applications: ["Bakery, cakes and biscuits", "Pasta, sauces and prepared foods", "Protein and nutrition formulations"],
+    closing: "A convenient ingredient for manufacturers who require repeatable performance without fresh-egg handling.",
+  },
+  {
+    name: "Red Chilli Powder", slug: "red-chilli-powder", category: "Powders & Superfoods",
+    tagline: "Vibrant colour and authentic Indian heat.",
+    summary: "Finely ground red chilli powder for spice blends, food processing and culinary use.",
+    intro: "Selected dried red chillies are cleaned and finely milled to deliver vivid colour, characteristic aroma and a balanced pungency. Grades can be discussed according to the buyer's colour and heat requirements.",
+    image: "/products/red-chilli-powder.jpg",
+    features: ["Bright natural red colour", "Consistent fine texture", "Distinctive chilli aroma and flavour", "Commercial and bulk pack formats"],
+    applications: ["Masala and seasoning blends", "Snacks, sauces and ready meals", "Food-service and retail spice ranges"],
+    closing: "A bold, versatile spice ingredient developed for consistent flavour and colour across every batch.",
+  },
+  {
+    name: "Sunflower Oil", slug: "sunflower-oil", category: "Oils",
+    tagline: "Light, versatile oil for modern kitchens.",
+    summary: "Clear sunflower oil with a neutral taste for cooking, food service and packaged-food applications.",
+    intro: "Sunflower oil is valued for its light flavour and versatility across home and commercial kitchens. Our supply is prepared for dependable handling, with pack formats suited to buyer and market requirements.",
+    image: "/products/sunflower-oil.jpg",
+    features: ["Light colour and neutral flavour", "Versatile everyday cooking performance", "Consistent commercial quality", "Flexible packing options for bulk orders"],
+    applications: ["Frying, baking and salad preparation", "Hotels, restaurants and catering", "Retail and packaged-food production"],
+    closing: "An adaptable edible oil choice for buyers who value clean flavour and dependable supply.",
+  },
+  {
+    name: "Neem Powder", slug: "neem-powder", category: "Powders & Superfoods",
+    tagline: "Traditional botanical value in a practical powder.",
+    summary: "Finely milled neem leaf powder for agricultural, personal-care and botanical formulations.",
+    intro: "Carefully selected neem leaves are dried and milled into a versatile botanical powder. Its convenient format supports agricultural preparations and a range of traditional personal-care formulations.",
+    image: "/products/neem-powder.jpg",
+    features: ["Made from selected neem leaves", "Fine texture for easy blending", "No artificial colour or fragrance", "Suitable for commercial bulk requirements"],
+    applications: ["Natural agricultural preparations", "Hair and skin-care formulations", "Botanical and traditional product blends"],
+    closing: "A straightforward neem ingredient for brands and growers seeking a recognisable Indian botanical.",
+  },
 ];
 
-export const productCategories: ProductCategory[] = ["Powders & Superfoods", "Grains", "Manure & Biomass", "Packaging"];
-export const featuredProducts = [products[1], products[2], products[3], products[10]];
+export const productCategories: ProductCategory[] = ["Powders & Superfoods", "Oils", "Grains", "Manure & Biomass", "Packaging"];
+export const featuredProducts = ["cow-dung-manure", "yellow-corn-maize", "moringa-leaf-powder", "groundnut-oil"].map((slug) => products.find((product) => product.slug === slug)!);
 export const contact = {
   address: "Ground Floor - 50 Variya, Ghogha Road, Nr. Rajaram No Avedo, Shivaji Circle, Bhavnagar - 364001, Gujarat, India",
   phone: "+91 99132 42040",
@@ -148,7 +198,7 @@ export const trustBadges = [
 ];
 
 export const faqs = [
-  ["What products can I source from IGLOBALAGREECARE?", "Our range covers cow dung products, yellow maize, moringa, mushroom and fruit or vegetable powders, plus PP and PET strapping rolls."],
+  ["What products can I source from IGLOBALAGREECARE?", "Our range covers cow dung products, yellow maize, edible oils, spices, botanical and food powders, mushrooms, plus PP and PET strapping rolls."],
   ["Can you provide certification documents?", "Available documents depend on the product and shipment. Tell us your destination and compliance needs, and we will confirm the applicable records before order finalisation."],
   ["Do you support custom or bulk orders?", "Yes. Packaging, quantity and selected specifications can be discussed for commercial orders, subject to feasibility and minimum quantities."],
   ["What is the minimum order quantity?", "MOQ varies by product, pack format and destination. Share your requirement through the enquiry form for a product-specific quotation."],
