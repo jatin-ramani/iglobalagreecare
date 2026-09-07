@@ -1,0 +1,418 @@
+export interface Product {
+  slug: string;
+  title: string;
+  category: "Powders & Superfoods" | "Oils" | "Grains" | "Manure & Biomass" | "Packaging";
+  image: string;
+  listDescription: string;
+  fullDescription: string[];
+  specifications: [string, string][];
+  applications: string[];
+}
+
+export const productCategories = [
+  "All",
+  "Powders & Superfoods",
+  "Oils",
+  "Grains",
+  "Manure & Biomass",
+  "Packaging",
+] as const;
+
+export type ProductCategory = (typeof productCategories)[number];
+
+export const products: Product[] = [
+  {
+    slug: "cow-dung-cakes",
+    title: "Cow Dung Cakes",
+    category: "Manure & Biomass",
+    image: "/products/CowDungCakes.png",
+    listDescription: "Naturally sun-dried cow dung cakes for ceremonial, household and biomass applications.",
+    fullDescription: [
+      "Cow Dung Cakes are traditional sun-dried cakes made from naturally collected cow dung, hand-shaped and dried under open sun until fully cured. They are widely used across India for ceremonial and religious purposes such as havan and yagna, as well as a traditional household fuel source.",
+      "Sourced from rural farming communities and prepared using traditional methods without added chemicals, the cakes are a natural, biodegradable product suited for both domestic use and export to international buyers seeking authentic Indian ritual and biomass products.",
+    ],
+    specifications: [
+      ["Physical Form", "Sun-dried solid cakes"],
+      ["Appearance", "Brown, natural texture"],
+      ["Packaging", "[CONFIRM: bundle size / packaging type]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Religious and ceremonial use (havan, puja)",
+      "Traditional biomass fuel",
+      "Raw material for organic fuel briquettes",
+    ],
+  },
+  {
+    slug: "cow-dung-manure",
+    title: "Cow Dung Manure",
+    category: "Manure & Biomass",
+    image: "/products/CowDungManure.png",
+    listDescription: "Nutrient-rich organic manure that supports soil structure, microbial activity and resilient growth.",
+    fullDescription: [
+      "Cow Dung Manure is a nutrient-rich organic fertilizer produced from naturally composted cow dung. It improves soil structure, enhances microbial activity, and supports long-term soil fertility without synthetic chemicals.",
+      "Ideal for organic farming, home gardening, and commercial agriculture, this manure is a sustainable alternative to chemical fertilizers, helping farmers and growers build healthier, more resilient soil over time.",
+    ],
+    specifications: [
+      ["Physical Form", "Composted, granular/loose manure"],
+      ["Appearance", "Dark brown, earthy"],
+      ["Packaging", "[CONFIRM: e.g. 25kg / 50kg bags]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM: organic certification if applicable]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Organic farming and soil conditioning",
+      "Home gardening and nursery use",
+      "Sustainable alternative to chemical fertilizer",
+    ],
+  },
+  {
+    slug: "yellow-corn-maize",
+    title: "Yellow Corn (Maize)",
+    category: "Grains",
+    image: "/products/YellowCorn.png",
+    listDescription: "Bright, uniform yellow maize for food processing, feed manufacturing and industrial requirements.",
+    fullDescription: [
+      "Our Yellow Corn (Maize) is sourced for its bright, uniform kernel color and consistent quality, suitable for food processing, animal feed manufacturing, and industrial starch/ethanol applications.",
+      "Carefully graded and cleaned before packaging, the corn meets the quality expectations of both domestic processors and international buyers looking for a reliable bulk grain supply.",
+    ],
+    specifications: [
+      ["Physical Form", "Whole dried kernels"],
+      ["Appearance", "Bright yellow"],
+      ["Packaging", "[CONFIRM: e.g. 50kg PP bags]"],
+      ["Moisture Content", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Animal and poultry feed",
+      "Food processing",
+      "Starch and ethanol industry",
+    ],
+  },
+  {
+    slug: "moringa-leaf-powder",
+    title: "Moringa Leaf Powder",
+    category: "Powders & Superfoods",
+    image: "/products/MoringaLeafPowder.png",
+    listDescription: "Finely milled moringa leaf powder for nutrition, wellness, food and personal-care formulations.",
+    fullDescription: [
+      "Moringa Leaf Powder is produced from carefully harvested and shade-dried moringa leaves, finely milled to preserve their nutrient density. It is valued for its rich vitamin, mineral and antioxidant content.",
+      "Widely used across nutraceutical, food & beverage, and personal-care industries, our moringa powder is suited for smoothies, supplements, functional foods and cosmetic formulations.",
+    ],
+    specifications: [
+      ["Physical Form", "Fine powder"],
+      ["Appearance", "Green"],
+      ["Packaging", "[CONFIRM]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Nutraceuticals and dietary supplements",
+      "Functional foods and beverages",
+      "Cosmetic and personal-care formulations",
+    ],
+  },
+  {
+    slug: "dry-oyster-mushroom",
+    title: "Dry Oyster Mushroom",
+    category: "Powders & Superfoods",
+    image: "/products/DryOysterMushroom.png",
+    listDescription: "Carefully dried oyster mushrooms that preserve their distinctive texture, aroma and nutritional value.",
+    fullDescription: [
+      "Dry Oyster Mushrooms are carefully dehydrated to lock in their distinctive texture, aroma and nutritional value, making them convenient to store, transport and rehydrate for culinary use.",
+      "A popular ingredient in soups, stir-fries and health foods, our dried oyster mushrooms are suited for both retail food brands and bulk food-processing buyers.",
+    ],
+    specifications: [
+      ["Physical Form", "Whole dried mushrooms"],
+      ["Appearance", "Light brown / beige"],
+      ["Packaging", "[CONFIRM]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Culinary use (soups, stir-fries)",
+      "Food processing",
+      "Health food products",
+    ],
+  },
+  {
+    slug: "oyster-mushroom-powder",
+    title: "Oyster Mushroom Powder",
+    category: "Powders & Superfoods",
+    image: "/products/OysterMushroomPowder.png",
+    listDescription: "Fine oyster mushroom powder for seasoning, nutrition mixes and convenient food formulation.",
+    fullDescription: [
+      "Oyster Mushroom Powder is milled from dried oyster mushrooms into a fine, versatile powder that retains the mushroom's natural umami flavor and nutritional benefits.",
+      "It's commonly used as a natural seasoning, nutrition-mix ingredient, or functional food additive, giving food manufacturers a convenient way to add mushroom nutrition to their products.",
+    ],
+    specifications: [
+      ["Physical Form", "Fine powder"],
+      ["Appearance", "Light brown"],
+      ["Packaging", "[CONFIRM]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Seasoning blends and soup bases",
+      "Nutrition mixes",
+      "Functional food formulation",
+    ],
+  },
+  {
+    slug: "banana-powder",
+    title: "Banana Powder",
+    category: "Powders & Superfoods",
+    image: "/products/BananaPowder.png",
+    listDescription: "Versatile banana powder for bakery, beverage, infant-food and nutrition applications.",
+    fullDescription: [
+      "Banana Powder is made from dried, ground bananas, offering a natural, versatile ingredient rich in flavor and nutrition for a wide range of food applications.",
+      "It is widely used in bakery products, beverages, infant food formulations, and nutrition supplements, giving manufacturers a shelf-stable alternative to fresh banana.",
+    ],
+    specifications: [
+      ["Physical Form", "Fine powder"],
+      ["Appearance", "Off-white to light yellow"],
+      ["Packaging", "[CONFIRM]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Bakery products",
+      "Beverages and nutrition supplements",
+      "Infant food formulations",
+    ],
+  },
+  {
+    slug: "garlic-powder",
+    title: "Garlic Powder",
+    category: "Powders & Superfoods",
+    image: "/products/GarlicPowder.png",
+    listDescription: "Dehydrated garlic powder delivering consistent aroma and flavour for food manufacturing and kitchens.",
+    fullDescription: [
+      "Garlic Powder is produced from dehydrated, ground garlic, delivering the same aroma and flavor as fresh garlic in a convenient, shelf-stable form.",
+      "A staple ingredient for food manufacturers, spice blenders, and commercial kitchens, our garlic powder ensures consistent flavor across large-scale food production.",
+    ],
+    specifications: [
+      ["Physical Form", "Fine powder"],
+      ["Appearance", "Off-white / cream"],
+      ["Packaging", "[CONFIRM]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Spice blends and seasoning",
+      "Food manufacturing",
+      "Commercial kitchens",
+    ],
+  },
+  {
+    slug: "onion-powder",
+    title: "Onion Powder",
+    category: "Powders & Superfoods",
+    image: "/products/OnionPowder.png",
+    listDescription: "Shelf-stable onion powder for seasonings, savoury foods and efficient commercial preparation.",
+    fullDescription: [
+      "Onion Powder is made from dehydrated onions, ground to a fine, shelf-stable powder that delivers consistent flavor without the moisture and shelf-life limitations of fresh onions.",
+      "It's a key ingredient for seasoning blends, savory snacks, and large-scale food preparation, giving manufacturers reliable flavor consistency and easy storage.",
+    ],
+    specifications: [
+      ["Physical Form", "Fine powder"],
+      ["Appearance", "Pale pink to off-white"],
+      ["Packaging", "[CONFIRM]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Seasoning blends and sauces",
+      "Savory snacks",
+      "Commercial food preparation",
+    ],
+  },
+  {
+    slug: "peanut-oil-groundnut-oil",
+    title: "Peanut Oil (Groundnut Oil)",
+    category: "Oils",
+    image: "/products/PeanutOilGroundnutOil.png",
+    listDescription: "Versatile groundnut oil with a mild nutty character for food service, retail and processing.",
+    fullDescription: [
+      "Peanut Oil (Groundnut Oil) is extracted from high-quality groundnuts, offering a mild nutty flavor and a high smoke point suited for cooking, frying and food processing.",
+      "Versatile across food service, retail packaging, and industrial processing, our groundnut oil meets the needs of both culinary and commercial buyers.",
+    ],
+    specifications: [
+      ["Physical Form", "Liquid oil"],
+      ["Appearance", "Light golden yellow"],
+      ["Packaging", "[CONFIRM: e.g. tins / drums / bottles]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Cooking and frying",
+      "Food service and retail packaging",
+      "Food processing",
+    ],
+  },
+  {
+    slug: "egg-white-powder",
+    title: "Egg White Powder",
+    category: "Powders & Superfoods",
+    image: "/products/EggWhitePowder.png",
+    listDescription: "Fine spray-dried egg white powder for bakery, food manufacturing and convenient large-scale formulation.",
+    fullDescription: [
+      "Egg White Powder is produced by spray-drying pasteurized egg whites into a fine, shelf-stable powder that retains the functional protein properties of fresh egg white.",
+      "It's widely used in bakery, confectionery, and food manufacturing, offering a convenient, long-shelf-life alternative to fresh eggs for large-scale production.",
+    ],
+    specifications: [
+      ["Physical Form", "Fine powder"],
+      ["Appearance", "Off-white / cream"],
+      ["Packaging", "[CONFIRM]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM: food safety / FSSAI]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Bakery and confectionery",
+      "Food manufacturing",
+      "Protein-based formulations",
+    ],
+  },
+  {
+    slug: "red-chili-powder",
+    title: "Red Chili Powder",
+    category: "Powders & Superfoods",
+    image: "/products/RedChiliPowder.png",
+    listDescription: "Finely ground red chili powder for spice blends, food processing and culinary use.",
+    fullDescription: [
+      "Red Chili Powder is finely ground from dried red chilies, delivering vibrant color and balanced heat for a wide range of culinary and food-processing applications.",
+      "Suited for spice blends, sauces, and packaged food products, our chili powder offers consistent quality for both retail and bulk buyers.",
+    ],
+    specifications: [
+      ["Physical Form", "Fine powder"],
+      ["Appearance", "Vibrant red"],
+      ["Packaging", "[CONFIRM]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Spice blends and sauces",
+      "Culinary use",
+      "Food processing",
+    ],
+  },
+  {
+    slug: "neem-powder",
+    title: "Neem Powder",
+    category: "Powders & Superfoods",
+    image: "/products/NeemPowder.png",
+    listDescription: "Finely milled neem leaf powder for agricultural, personal-care and botanical formulations.",
+    fullDescription: [
+      "Neem Powder is finely milled from dried neem leaves, valued for its natural properties and long-standing use in agricultural, personal-care, and botanical applications.",
+      "It's commonly used as a natural input in organic pest-management formulations, herbal cosmetics, and traditional wellness products.",
+    ],
+    specifications: [
+      ["Physical Form", "Fine powder"],
+      ["Appearance", "Olive green"],
+      ["Packaging", "[CONFIRM]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Organic pest control",
+      "Herbal and personal-care formulations",
+      "Botanical extracts",
+    ],
+  },
+  {
+    slug: "sunflower-oil",
+    title: "Sunflower Oil",
+    category: "Oils",
+    image: "/products/SunflowerOil.png",
+    listDescription: "Clear sunflower oil with a neutral taste for cooking, food service and packaged-food applications.",
+    fullDescription: [
+      "Sunflower Oil is refined for a clear appearance and neutral taste, making it a versatile choice for cooking, food service, and packaged-food applications.",
+      "With a high vitamin E content and light texture, it's a popular choice for both retail and commercial food buyers worldwide.",
+    ],
+    specifications: [
+      ["Physical Form", "Liquid oil"],
+      ["Appearance", "Pale yellow, clear"],
+      ["Packaging", "[CONFIRM]"],
+      ["Shelf Life", "[CONFIRM]"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Cooking and food service",
+      "Packaged food products",
+      "Retail",
+    ],
+  },
+  {
+    slug: "pp-pet-strapping-rolls",
+    title: "PP & PET Strapping Rolls",
+    category: "Packaging",
+    image: "/products/PP&PETStrappingRolls.png",
+    listDescription: "Durable PP and PET strapping solutions for bundling, pallet stability and industrial transport.",
+    fullDescription: [
+      "PP & PET Strapping Rolls are durable, high-tensile-strength strapping solutions used for bundling, pallet stabilization, and secure industrial transport.",
+      "Available in polypropylene (PP) and polyester (PET) variants, these rolls are suited for warehouses, logistics companies, and manufacturers needing reliable packaging materials for shipment and storage.",
+    ],
+    specifications: [
+      ["Physical Form", "Rolled strapping band"],
+      ["Material", "PP / PET"],
+      ["Packaging", "[CONFIRM: roll length / width / core size]"],
+      ["Shelf Life", "N/A (durable material)"],
+      ["Minimum Order Quantity", "[CONFIRM]"],
+      ["Country of Origin", "India"],
+      ["Certifications", "[CONFIRM]"],
+      ["HS Code", "[CONFIRM]"],
+    ],
+    applications: [
+      "Pallet bundling",
+      "Industrial packaging",
+      "Logistics and warehousing",
+    ],
+  },
+];
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find((p) => p.slug === slug);
+}

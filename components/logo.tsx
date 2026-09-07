@@ -8,12 +8,12 @@ export function Logo({ light = false }: { light?: boolean }) {
       aria-label="IGLOBALAGREECARE home"
       className={`inline-flex items-center gap-2.5 ${light ? "text-white" : "text-forest"}`}
     >
-      <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[#f7f5ef] shadow-sm ring-1 ring-black/5">
+      <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-white shadow-sm ring-1 ring-black/10">
         <Image
-          src="/client/iglobalagreecare-emblem.png"
-          alt="IGLOBALAGREECARE emblem"
+          src="/logo/logo.png"
+          alt="IGLOBALAGREECARE Logo"
           fill
-          sizes="40px"
+          sizes="48px"
           className="object-cover"
           priority
         />

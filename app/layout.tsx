@@ -10,7 +10,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.iglobalagreecare.com"),
   title: { default: "IGLOBALAGREECARE | Indian Agricultural Exports", template: "%s | IGLOBALAGREECARE" },
   description: "Responsible Indian sourcing and commercial support for domestic and global buyers.",
-  openGraph: { title: "IGLOBALAGREECARE", description: "Responsible sourcing prepared for global trade.", type: "website" },
+  icons: {
+    icon: "/logo/logo.ico",
+    shortcut: "/logo/logo.ico",
+    apple: "/logo/logo.png",
+  },
+  openGraph: {
+    title: "IGLOBALAGREECARE",
+    description: "Responsible sourcing prepared for global trade.",
+    type: "website",
+    images: ["/logo/logo.png"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

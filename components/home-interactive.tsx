@@ -5,7 +5,40 @@ import { useState } from "react";
 import { faqs } from "@/lib/data";
 
 export function HeroCarousel() {
-  return <section className="relative min-h-[760px] overflow-hidden text-white"><Image src="/client/hero-crops-2026.jpg" alt="Bright Indian agricultural crop field" fill priority sizes="100vw" className="object-cover object-center"/><div className="absolute inset-0 bg-linear-to-r from-[#0c2416]/95 via-[#0c2416]/70 to-[#0c2416]/20"/><div className="container-site relative flex min-h-[760px] items-center pt-24"><div className="max-w-3xl"><p className="eyebrow inline-block rounded-full border border-white/30 px-4 py-2 text-white">Indian agricultural exports</p><h1 className="mt-7 text-5xl font-medium leading-[.9] tracking-[-.045em] sm:text-7xl lg:text-8xl">Quality rooted in India.<br/><em className="text-[#e9bb84]">Ready for the world.</em></h1><p className="mt-6 max-w-xl text-base leading-7 text-white/80">Responsible sourcing, practical quality assurance and clear communication for domestic and international buyers.</p><Link href="/contact" className="mt-8 inline-block rounded-full bg-gold px-6 py-3 text-xs font-bold uppercase tracking-wider">Start a conversation</Link></div></div></section>;
+  return (
+    <section className="relative min-h-screen min-h-[100dvh] w-full overflow-hidden text-white flex flex-col justify-center">
+      <Image
+        src="/client/hero-crops-2026.jpg"
+        alt="Bright Indian agricultural crop field"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center brightness-105 contrast-[1.02]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0c2416]/85 via-[#0c2416]/60 to-[#0c2416]/80 md:bg-gradient-to-r md:from-[#0c2416]/90 md:via-[#0c2416]/40 md:to-transparent" />
+      <div className="container-site relative flex min-h-screen min-h-[100dvh] w-full items-center pt-24 pb-12 sm:pt-28 sm:pb-16">
+        <div className="max-w-3xl">
+          <p className="eyebrow inline-block rounded-full border border-white/30 bg-[#0c2416]/30 px-3.5 py-1.5 text-white backdrop-blur-xs text-[10px] sm:text-xs">
+            Indian agricultural exports
+          </p>
+          <h1 className="mt-5 text-3xl font-medium leading-[1.02] tracking-[-.035em] sm:text-6xl lg:text-8xl">
+            Quality rooted in India.
+            <br />
+            <em className="text-[#e9bb84]">Ready for the world.</em>
+          </h1>
+          <p className="mt-5 max-w-xl text-sm leading-6 text-white/85 sm:text-base sm:leading-7">
+            Responsible sourcing, practical quality assurance and clear communication for domestic and international buyers.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-7 inline-block rounded-full bg-gold px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all duration-200 hover:scale-105 hover:bg-gold/90"
+          >
+            Start a conversation
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export function FAQAccordion() {

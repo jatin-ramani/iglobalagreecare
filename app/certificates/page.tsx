@@ -1,6 +1,109 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { PageHero, SectionHead } from "@/components/ui";
-export const metadata: Metadata = { title: "Certificates & Quality", description: "IGLOBALAGREECARE quality assurance and documentation approach." };
-const certificates = ["APEDA","IEC","ISO 22000","FSSAI","Organic / NPOP","Phytosanitary Certificate"];
-export default function Certificates() { return <><PageHero eyebrow="Quality assurance" title="Certificates & Quality Assurance" copy="Product and shipment documentation aligned with buyer requirements, destination rules and confirmed order scope."/><section className="bg-[#f8f5ee] py-24"><div className="container-site"><SectionHead eyebrow="Documentation" title="Compliance made clear before shipment."/><div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">{certificates.map((name) => <div key={name} className="grid aspect-square place-items-center rounded-full border border-gold/40 bg-white p-5 text-center font-display text-lg text-leaf shadow-sm">{name}</div>)}</div><p className="mt-7 text-xs leading-6 text-ink/45">Certificate availability is product- and order-specific. Copies are supplied only when applicable and verified.</p>{/* [CUSTOMIZE: replace with certifications the business actually holds] */}</div></section><section className="bg-white py-24 md:py-32"><div className="container-site"><SectionHead eyebrow="Quality control" title="Four checkpoints that protect every order."/><div className="mt-12 grid gap-5 md:grid-cols-4">{[["01","Sourcing standards","Suppliers and product lots are reviewed against the agreed requirement."],["02","Testing & records","Relevant test reports and documents are confirmed where applicable."],["03","Inspection","Product condition, quantity and packing details are checked before dispatch."],["04","Packaging","Materials and formats are selected to support handling, storage and transit."]].map(([number,title,copy]) => <article className="rounded-2xl bg-[#f8f5ee] p-7" key={number}><b className="font-display text-2xl text-gold">{number}</b><h3 className="mt-5 text-2xl text-leaf">{title}</h3><p className="mt-3 text-sm leading-7 text-ink/55">{copy}</p></article>)}</div></div></section><section className="bg-forest py-20 text-white"><div className="container-site flex flex-col items-start justify-between gap-8 md:flex-row md:items-center"><div><h2 className="text-4xl font-medium">Why quality matters to us.</h2><p className="mt-4 max-w-2xl text-sm leading-7 text-white/60">Clear specifications and verified documentation reduce uncertainty, protect buyer confidence and create stronger long-term trade relationships.</p></div><Link href="/contact" className="rounded-full bg-gold px-6 py-3 text-xs font-bold uppercase tracking-wider">Request certificate copies</Link></div></section></>; }
+import { certificatesList } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "Certificates & Quality Assurance | IGLOBALAGREECARE",
+  description: "Official certifications and quality assurance documentation for IGLOBALAGREECARE exports.",
+};
+
+const checkpoints = [
+  { number: "01", title: "Sourcing Standards", copy: "Verified farm clusters and lot selection meeting export grade specifications." },
+  { number: "02", title: "Testing & Records", copy: "Accredited laboratory analysis, moisture checks, and batch COA reports." },
+  { number: "03", title: "Inspection", copy: "Pre-shipment verification of physical condition, grading, and weight parameters." },
+  { number: "04", title: "Export Packaging", copy: "Moisture-barrier sealing, food-grade liners, and fumigated container stowage." },
+];
+
+export default function CertificatesPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Quality & Compliance"
+        title="Certificates & Quality Assurance"
+        copy="Product and shipment documentation aligned with international standards, buyer specifications, and destination import requirements."
+      />
+
+      {/* Minimal 6 Certification Badges */}
+      <section className="bg-[#f8f5ee] py-16 md:py-24">
+        <div className="container-site">
+          <SectionHead
+            eyebrow="Accreditations"
+            title="Official Standards & Certifications"
+            copy="Our operations and export consignments comply with recognized statutory authorities and food safety benchmarks."
+          />
+
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            {certificatesList.map((item) => (
+              <div
+                key={item.name}
+                className="group flex flex-col items-center justify-center rounded-3xl border border-forest/10 bg-white p-6 text-center shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-md"
+              >
+                <div className="relative flex aspect-square h-20 w-20 items-center justify-center rounded-full border border-gold/30 bg-[#f8f5ee] p-3 transition-transform duration-300 group-hover:scale-105">
+                  <Image
+                    src={item.logo}
+                    alt={item.name}
+                    fill
+                    sizes="80px"
+                    className="object-contain p-2"
+                  />
+                </div>
+                <h3 className="mt-4 font-display text-lg font-medium text-leaf group-hover:text-forest">
+                  {item.title}
+                </h3>
+                <p className="mt-1 text-[11px] leading-4 text-ink/50 line-clamp-2">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 text-center text-xs text-ink/45">
+            * Certificate availability is product- and order-specific. Copies are supplied upon confirmed order scope.
+          </p>
+        </div>
+      </section>
+
+      {/* Minimal 4-Checkpoint Quality Process */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="container-site">
+          <SectionHead
+            eyebrow="Quality Control"
+            title="Four Checkpoints for Every Shipment"
+          />
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {checkpoints.map((cp) => (
+              <article key={cp.number} className="rounded-3xl border border-forest/10 bg-[#f8f5ee] p-6 sm:p-7 shadow-xs">
+                <b className="font-display text-3xl text-gold">{cp.number}</b>
+                <h3 className="mt-3 font-display text-xl font-medium text-leaf">{cp.title}</h3>
+                <p className="mt-2 text-xs leading-6 text-ink/65">{cp.copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Minimal Clean CTA */}
+      <section className="bg-forest py-14 text-white">
+        <div className="container-site flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-display font-medium text-white">
+              Need certificate copies or batch test reports?
+            </h2>
+            <p className="mt-1 max-w-xl text-xs sm:text-sm text-white/65">
+              Contact our trade team with your required product and destination port details.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="rounded-full bg-gold px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all duration-200 hover:bg-gold/90 shrink-0"
+          >
+            Request Certificate Copies
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
