@@ -6,6 +6,8 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const [phone, setPhone] = useState("");
+
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setLoading(true);
@@ -19,7 +21,10 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
       });
       const result = await response.json();
       setStatus(result.message || "Message sent successfully.");
-      if (response.ok) form.reset();
+      if (response.ok) {
+        form.reset();
+        setPhone("");
+      }
     } catch {
       setStatus("Error sending message. Please try again.");
     } finally {
@@ -58,7 +63,20 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
 
       <label className="text-xs font-semibold text-ink/70">
         Phone / WhatsApp *
-        <input name="phone" required className={field} placeholder="+91..." />
+        <input
+          name="phone"
+          type="tel"
+          inputMode="tel"
+          required
+          className={field}
+          placeholder="+91 98765 43210"
+          value={phone}
+          onChange={(e) => {
+            // Allow only digits, +, -, space, and parentheses
+            const sanitized = e.target.value.replace(/[^0-9+\s\-()]/g, "");
+            setPhone(sanitized);
+          }}
+        />
       </label>
 
       <label className="text-xs font-semibold text-ink/70">
