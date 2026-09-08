@@ -21,6 +21,35 @@ export type ProductCategory = (typeof productCategories)[number];
 
 export const products: Product[] = [
   {
+    slug: "vermicompost-fertilizer",
+    title: "Vermicompost Fertilizer",
+    category: "Manure & Biomass",
+    image: "/products/VermicompostFertilizer.jpg",
+    listDescription: "100% natural organic soil enricher produced by earthworm composting, rich in essential NPK, minerals and beneficial microbes.",
+    fullDescription: [
+      "Vermicompost Fertilizer is a premium, 100% natural organic bio-fertilizer and soil conditioner produced through the biological breakdown of organic cattle biomass by earthworms (Eisenia Fetida). It provides a rich, balanced supply of plant-available nutrients and beneficial microbial flora.",
+      "Engineered by nature to rejuvenate soil structure, vermicompost increases moisture retention, enhances root aeration, promotes robust root development, and improves crop yield across agriculture, horticulture, greenhouses, and organic plantations.",
+    ],
+    specifications: [
+      ["Physical Form", "Granular, fine dark compost"],
+      ["Appearance", "Dark blackish-brown, odorless, earthy texture"],
+      ["Moisture Content", "15% – 25%"],
+      ["Organic Carbon", "16% – 22%"],
+      ["C:N Ratio", "< 20:1"],
+      ["Packaging", "5kg, 10kg, 25kg, 50kg HDPE/PP bags & 1-Ton Jumbo Bags"],
+      ["Country of Origin", "India"],
+      ["Shelf Life", "12 – 24 months (dry storage)"],
+      ["Certifications", "APEDA, NPOP/Organic certified available, Lab Test COA"],
+      ["HS Code", "31010099"],
+    ],
+    applications: [
+      "Commercial organic farming and crop cultivation",
+      "Soil conditioning and biological soil rejuvenation",
+      "Greenhouse, nursery, and horticulture potting mixes",
+      "Landscaping, home gardening, and fruit orchards",
+    ],
+  },
+  {
     slug: "cow-dung-cakes",
     title: "Cow Dung Cakes",
     category: "Manure & Biomass",

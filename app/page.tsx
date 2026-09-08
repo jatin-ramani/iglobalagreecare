@@ -14,6 +14,7 @@ import {
   ShipIcon,
   CheckIcon,
   LeafIcon,
+  PackageIcon,
 } from "@/components/icons";
 
 export default function Home() {
@@ -53,12 +54,34 @@ export default function Home() {
     },
   ];
 
-  const exportProcess = [
-    { step: "01", title: "Requirement & Specs", desc: "Grade, volume, packaging specifications, and destination port parameters." },
-    { step: "02", title: "Origin Sourcing", desc: "Direct lot selection from verified agricultural clusters in Gujarat & India." },
-    { step: "03", title: "Lab Testing & COA", desc: "Batch test reports confirming moisture, purity, and quarantine compliance." },
-    { step: "04", title: "Export Packing", desc: "Moisture-barrier bags, food-grade liners, HDPE drums, or bulk PP bags." },
-    { step: "05", title: "Port Dispatch", desc: "Container stuffing with photographic proof, fumigation, and customs handover." },
+  const vermicompostBenefits = [
+    {
+      title: "Microbial Biomass & Natural Enzymes",
+      desc: "Packed with active nitrogen-fixing microbes, mycorrhizae, and humic acid to stimulate deep root growth and nutrient uptake.",
+      icon: SproutIcon,
+    },
+    {
+      title: "Enhanced Water Retention & Aeration",
+      desc: "Boosts soil porosity and moisture-holding capacity by up to 40%, reducing crop drought stress and soil compaction.",
+      icon: LeafIcon,
+    },
+    {
+      title: "100% Cured, Pathogen & Weed-Free",
+      desc: "Fully screened, odorless, dark granular compost with neutral pH, perfectly safe for horticulture, cash crops, and nurseries.",
+      icon: ShieldCheckIcon,
+    },
+    {
+      title: "Flexible Bulk Export Packaging",
+      desc: "Available in 5kg–50kg moisture-sealed HDPE/PP bags and 1-ton jumbo bags with customized palletization and lab COA.",
+      icon: PackageIcon,
+    },
+  ];
+
+  const vermicompostSpecs = [
+    { label: "Organic Carbon", val: "> 16 - 22%" },
+    { label: "Moisture Range", val: "15% - 25%" },
+    { label: "C : N Ratio", val: "< 20 : 1" },
+    { label: "Form & Purity", val: "100% Granular" },
   ];
 
   return (
@@ -338,28 +361,120 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5-Step Export Workflow */}
-      <section className="bg-forest py-16 text-white md:py-28">
-        <div className="container-site">
-          <p className="eyebrow text-gold">Structured Methodology</p>
-          <h2 className="section-title text-white">Our Export & Sourcing Workflow.</h2>
-          <p className="mt-4 max-w-2xl text-sm leading-6 text-white/70">
-            A reliable 5-stage process from buyer specification through container stuffing and international customs handover.
-          </p>
+      {/* Vermicompost Fertilizer Feature Showcase */}
+      <section className="relative overflow-hidden bg-forest py-16 text-white md:py-28">
+        <div className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-leaf/20 blur-3xl" />
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-            {exportProcess.map((item) => (
-              <article
-                key={item.step}
-                className="flex flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xs transition-all duration-300 hover:border-gold/50 hover:bg-white/10"
-              >
-                <div>
-                  <b className="font-display text-3xl text-[#e9bb84]">{item.step}</b>
-                  <h3 className="mt-4 font-display text-xl font-medium text-white">{item.title}</h3>
-                  <p className="mt-3 text-xs leading-6 text-white/65">{item.desc}</p>
+        <div className="container-site relative">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <p className="eyebrow text-gold">100% Natural Organic Soil Enricher</p>
+              <h2 className="section-title text-white">
+                Premium Vermicompost Fertilizer.
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm leading-6 text-white/70">
+              Biologically converted from pure indigenous cattle biomass using elite earthworm cultures. Formulated to replenish depleted soils, accelerate plant vigor, and deliver balanced bio-available nutrition for international sustainable agriculture.
+            </p>
+          </div>
+
+          <div className="mt-12 grid items-center gap-10 lg:grid-cols-12">
+            {/* Left Column: Image Showcase with Badges & Quick Specs */}
+            <div className="lg:col-span-5">
+              <div className="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/5 p-3 shadow-2xl backdrop-blur-xs transition-all duration-300 hover:border-gold/50">
+                <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-[#0c1e14]">
+                  <Image
+                    src="/products/VermicompostFertilizer.jpg"
+                    alt="Vermicompost Fertilizer 100% Natural Organic Soil Enricher"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-3 left-3 flex items-center gap-1.5 rounded-full bg-forest/90 px-3.5 py-1.5 text-[0.65rem] font-bold uppercase tracking-wider text-white backdrop-blur-md border border-white/10">
+                    <LeafIcon className="h-3.5 w-3.5 text-gold" />
+                    <span>100% Pure Organic Bio-Input</span>
+                  </div>
+                  <div className="absolute bottom-3 right-3 rounded-full bg-gold/90 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-forest backdrop-blur-md font-semibold">
+                    Lab Certified COA
+                  </div>
                 </div>
-              </article>
-            ))}
+
+                {/* Technical Quick Spec Strip */}
+                <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                  {vermicompostSpecs.map((spec) => (
+                    <div
+                      key={spec.label}
+                      className="rounded-xl border border-white/10 bg-white/5 p-2.5 text-center"
+                    >
+                      <p className="text-[0.65rem] font-bold uppercase tracking-wider text-gold/80">
+                        {spec.label}
+                      </p>
+                      <p className="mt-1 font-display text-xs font-medium text-white">
+                        {spec.val}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Key Benefits Grid & Action */}
+            <div className="lg:col-span-7">
+              <div className="grid gap-4 sm:grid-cols-2">
+                {vermicompostBenefits.map((item) => {
+                  const IconComp = item.icon;
+                  return (
+                    <article
+                      key={item.title}
+                      className="group rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xs transition-all duration-300 hover:border-gold/50 hover:bg-white/10"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-gold transition-colors group-hover:bg-gold group-hover:text-forest">
+                        <IconComp className="h-5 w-5" />
+                      </div>
+                      <h3 className="mt-3.5 font-display text-base font-medium text-white">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-xs leading-5 text-white/65">
+                        {item.desc}
+                      </p>
+                    </article>
+                  );
+                })}
+              </div>
+
+              {/* Action Buttons and Trust Points */}
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/products/vermicompost-fertilizer"
+                  className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-xs font-bold uppercase tracking-wider text-forest shadow-md transition-all duration-200 hover:bg-[#d49e60]"
+                >
+                  <span>Explore Product Specifications</span>
+                  <span>→</span>
+                </Link>
+                <Link
+                  href="/quote"
+                  className="rounded-full border border-white/20 bg-white/5 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-xs transition-all duration-200 hover:border-gold hover:text-gold"
+                >
+                  Request Commercial Quote
+                </Link>
+              </div>
+
+              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.7rem] font-semibold text-white/60">
+                <span className="inline-flex items-center gap-1.5">
+                  <CheckIcon className="h-3.5 w-3.5 text-gold" />
+                  APEDA Registered Export
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <CheckIcon className="h-3.5 w-3.5 text-gold" />
+                  Container Stuffing & Palletized
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <CheckIcon className="h-3.5 w-3.5 text-gold" />
+                  Bulk FOB / CIF Worldwide
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
