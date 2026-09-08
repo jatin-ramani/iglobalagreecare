@@ -153,6 +153,92 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Vermicompost Fertilizer Showcase (Directly below About) */}
+      <section className="bg-forest py-16 text-white md:py-24">
+        <div className="container-site">
+          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+            {/* Left Column: Clean Image Frame */}
+            <div className="relative lg:col-span-5">
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-3 shadow-xl">
+                <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-[#0c1e14] sm:aspect-16/11">
+                  <Image
+                    src="/products/VermicompostFertilizer.jpg"
+                    alt="Vermicompost Fertilizer 100% Natural Organic Soil Enricher"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute top-4 left-4 flex items-center gap-1.5 rounded-full bg-forest/85 px-4 py-1.5 text-[0.65rem] font-bold uppercase tracking-wider text-white backdrop-blur-md">
+                    <LeafIcon className="h-3 w-3 text-gold" />
+                    <span>100% Organic Soil Enricher</span>
+                  </div>
+                </div>
+
+                <div className="mt-3 flex items-center justify-between rounded-xl bg-white/5 px-5 py-4 border border-white/5">
+                  <div>
+                    <p className="text-xs font-bold text-white">Biological Soil Conditioning</p>
+                    <p className="text-[0.72rem] text-white/60">Earthworm decomposed cattle biomass</p>
+                  </div>
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-gold">
+                    Tested & Certified
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Minimal Content & Value Points */}
+            <div className="lg:col-span-7">
+              <p className="eyebrow text-gold">Featured Bio-Input</p>
+              <h2 className="section-title text-white">
+                Vermicompost Fertilizer.
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-white/70">
+                A nutrient-dense organic fertilizer produced through the natural earthworm composting of pure cattle biomass. Rich in bio-available NPK nutrients, beneficial microflora, and humic acid to rejuvenate soil structure, increase moisture retention, and boost sustainable crop yields.
+              </p>
+
+              {/* Minimal 3-Point Checklist */}
+              <div className="mt-6 space-y-3">
+                <div className="flex items-start gap-3 text-xs leading-5 text-white/75">
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <span>
+                    <strong className="text-white font-medium">Bioactive Soil Conditioning:</strong> Increases soil porosity, aeration, and moisture-holding capacity by up to 40%.
+                  </span>
+                </div>
+                <div className="flex items-start gap-3 text-xs leading-5 text-white/75">
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <span>
+                    <strong className="text-white font-medium">100% Screened & Weed-Free:</strong> Cured, pathogen-free, odorless granular compost with balanced organic carbon (&gt;16–22%).
+                  </span>
+                </div>
+                <div className="flex items-start gap-3 text-xs leading-5 text-white/75">
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <span>
+                    <strong className="text-white font-medium">Export Grade Packaging:</strong> 25kg / 50kg moisture-barrier bags and 1-ton jumbo bags with lab test reports (COA).
+                  </span>
+                </div>
+              </div>
+
+              {/* Minimal Buttons */}
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/products/vermicompost-fertilizer"
+                  className="rounded-full bg-gold px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-forest shadow-md transition-opacity hover:opacity-90"
+                >
+                  View Product Details
+                </Link>
+                <Link
+                  href="/quote"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white/80 hover:text-gold transition-colors"
+                >
+                  <span>Request commercial quote</span>
+                  <span>→</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Export Products */}
       <section className="bg-[#f1ece2] py-16 md:py-28">
         <div className="container-site">
@@ -324,92 +410,6 @@ export default function Home() {
                 <span className="rounded-full bg-[#f1eadc] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-leaf">
                   Verified Origin
                 </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Vermicompost Fertilizer Showcase (Minimal & Clean) */}
-      <section className="bg-forest py-16 text-white md:py-24">
-        <div className="container-site">
-          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
-            {/* Left Column: Clean Image Frame */}
-            <div className="relative lg:col-span-5">
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-3 shadow-xl">
-                <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-[#0c1e14] sm:aspect-16/11">
-                  <Image
-                    src="/products/VermicompostFertilizer.jpg"
-                    alt="Vermicompost Fertilizer 100% Natural Organic Soil Enricher"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 40vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute top-4 left-4 flex items-center gap-1.5 rounded-full bg-forest/85 px-4 py-1.5 text-[0.65rem] font-bold uppercase tracking-wider text-white backdrop-blur-md">
-                    <LeafIcon className="h-3 w-3 text-gold" />
-                    <span>100% Organic Soil Enricher</span>
-                  </div>
-                </div>
-
-                <div className="mt-3 flex items-center justify-between rounded-xl bg-white/5 px-5 py-4 border border-white/5">
-                  <div>
-                    <p className="text-xs font-bold text-white">Biological Soil Conditioning</p>
-                    <p className="text-[0.72rem] text-white/60">Earthworm decomposed cattle biomass</p>
-                  </div>
-                  <span className="rounded-full bg-white/10 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-gold">
-                    Tested & Certified
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Minimal Content & Value Points */}
-            <div className="lg:col-span-7">
-              <p className="eyebrow text-gold">Featured Bio-Input</p>
-              <h2 className="section-title text-white">
-                Vermicompost Fertilizer.
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-white/70">
-                A nutrient-dense organic fertilizer produced through the natural earthworm composting of pure cattle biomass. Rich in bio-available NPK nutrients, beneficial microflora, and humic acid to rejuvenate soil structure, increase moisture retention, and boost sustainable crop yields.
-              </p>
-
-              {/* Minimal 3-Point Checklist */}
-              <div className="mt-6 space-y-3">
-                <div className="flex items-start gap-3 text-xs leading-5 text-white/75">
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                  <span>
-                    <strong className="text-white font-medium">Bioactive Soil Conditioning:</strong> Increases soil porosity, aeration, and moisture-holding capacity by up to 40%.
-                  </span>
-                </div>
-                <div className="flex items-start gap-3 text-xs leading-5 text-white/75">
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                  <span>
-                    <strong className="text-white font-medium">100% Screened & Weed-Free:</strong> Cured, pathogen-free, odorless granular compost with balanced organic carbon (&gt;16–22%).
-                  </span>
-                </div>
-                <div className="flex items-start gap-3 text-xs leading-5 text-white/75">
-                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                  <span>
-                    <strong className="text-white font-medium">Export Grade Packaging:</strong> 25kg / 50kg moisture-barrier bags and 1-ton jumbo bags with lab test reports (COA).
-                  </span>
-                </div>
-              </div>
-
-              {/* Minimal Buttons */}
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/products/vermicompost-fertilizer"
-                  className="rounded-full bg-gold px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-forest shadow-md transition-opacity hover:opacity-90"
-                >
-                  View Product Details
-                </Link>
-                <Link
-                  href="/quote"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white/80 hover:text-gold transition-colors"
-                >
-                  <span>Request commercial quote</span>
-                  <span>→</span>
-                </Link>
               </div>
             </div>
           </div>
