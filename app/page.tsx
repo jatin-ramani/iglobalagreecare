@@ -18,11 +18,11 @@ import {
 
 export default function Home() {
   const featuredProducts = [
-    products.find((p) => p.slug === "indian-rice")!,
     products.find((p) => p.slug === "moringa-leaf-powder")!,
     products.find((p) => p.slug === "cow-dung-manure")!,
-    products.find((p) => p.slug === "yellow-corn-maize")!,
+    products.find((p) => p.slug === "indian-rice")!,
     products.find((p) => p.slug === "peanut-oil-groundnut-oil")!,
+    products.find((p) => p.slug === "green-millet")!,
     products.find((p) => p.slug === "red-chili-powder")!,
   ].filter(Boolean);
 
