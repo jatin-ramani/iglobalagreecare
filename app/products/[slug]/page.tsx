@@ -74,10 +74,10 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           </nav>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-12 items-start">
+        <div className="grid gap-10 lg:grid-cols-12 items-start w-full min-w-0 max-w-full">
           {/* Left Column: 4:3 Hero Image Card */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-4">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-forest/10 bg-white shadow-md">
+          <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-4 w-full min-w-0 max-w-full">
+            <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl border border-forest/10 bg-white shadow-md">
               <Image
                 src={product.image}
                 alt={product.title}
@@ -115,11 +115,11 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           </div>
 
           {/* Right Column: Product Info & Specifications */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-8 w-full min-w-0 max-w-full">
             {/* Header / Title */}
-            <div>
+            <div className="w-full min-w-0">
               <p className="eyebrow text-[0.65rem]">{product.category}</p>
-              <h1 className="mt-1 text-3xl sm:text-4xl md:text-5xl font-medium font-display tracking-tight text-leaf">
+              <h1 className="mt-1 text-3xl sm:text-4xl md:text-5xl font-medium font-display tracking-tight text-leaf break-words">
                 {product.title}
               </h1>
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-ink/80 font-medium border-l-2 border-gold pl-4 bg-white/50 py-2 rounded-r-xl">
@@ -128,7 +128,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             </div>
 
             {/* Product Overview */}
-            <div className="rounded-3xl border border-forest/10 bg-white p-6 sm:p-8 shadow-xs">
+            <div className="rounded-3xl border border-forest/10 bg-white p-6 sm:p-8 shadow-xs w-full min-w-0">
               <h2 className="text-base font-bold uppercase tracking-wider text-forest">
                 Product Overview
               </h2>
@@ -141,26 +141,28 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
             {/* Variety Categories Breakdown (if available) */}
             {product.varietiesTable && product.varietiesTable.length > 0 && (
-              <div className="rounded-3xl border border-forest/10 bg-white p-5 sm:p-8 shadow-xs overflow-hidden">
+              <div className="rounded-3xl border border-forest/10 bg-white p-5 sm:p-8 shadow-xs w-full min-w-0 overflow-hidden">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <h2 className="text-base font-bold uppercase tracking-wider text-forest">
                     Export Categories & Variety Breakdown
                   </h2>
                   <span className="text-[11px] font-bold uppercase tracking-wider text-gold">
-                    Ranked by Trade Volume & Global Demand
+                    Ranked by Trade Volume & Demand
                   </span>
                 </div>
-                <div className="mt-5 overflow-x-auto -mx-5 sm:mx-0">
-                  <table className="w-full text-left border-collapse min-w-[540px]">
+
+                {/* Tablet & Desktop Table */}
+                <div className="mt-5 hidden sm:block overflow-x-auto w-full">
+                  <table className="w-full text-left border-collapse min-w-[500px]">
                     <thead>
                       <tr className="border-b border-forest/15 bg-[#f1ece2]/60">
-                        <th className="py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-forest w-[28%]">
+                        <th className="py-3 px-3.5 text-xs font-bold uppercase tracking-wider text-forest w-[28%]">
                           Category
                         </th>
-                        <th className="py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-forest w-[34%]">
+                        <th className="py-3 px-3.5 text-xs font-bold uppercase tracking-wider text-forest w-[34%]">
                           Typical Formats / Varieties
                         </th>
-                        <th className="py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-forest w-[38%]">
+                        <th className="py-3 px-3.5 text-xs font-bold uppercase tracking-wider text-forest w-[38%]">
                           Description & Market Notes
                         </th>
                       </tr>
@@ -171,13 +173,13 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                           key={item.category}
                           className={idx % 2 === 0 ? "bg-white" : "bg-[#f8f5ee]/40"}
                         >
-                          <td className="py-3.5 px-4 font-bold text-leaf align-top whitespace-normal">
+                          <td className="py-3.5 px-3.5 font-bold text-leaf align-top">
                             {item.category}
                           </td>
-                          <td className="py-3.5 px-4 font-medium text-ink/80 align-top leading-5">
+                          <td className="py-3.5 px-3.5 font-medium text-ink/80 align-top leading-5">
                             {item.formats}
                           </td>
-                          <td className="py-3.5 px-4 text-ink/70 align-top leading-5 text-xs">
+                          <td className="py-3.5 px-3.5 text-ink/70 align-top leading-5 text-xs">
                             {item.description}
                           </td>
                         </tr>
@@ -185,22 +187,41 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                     </tbody>
                   </table>
                 </div>
+
+                {/* Mobile Friendly Cards */}
+                <div className="mt-4 space-y-3 sm:hidden">
+                  {product.varietiesTable.map((item) => (
+                    <div
+                      key={item.category}
+                      className="rounded-2xl border border-forest/8 bg-[#f8f5ee]/60 p-4 space-y-1.5 text-xs"
+                    >
+                      <p className="font-bold text-leaf text-sm">{item.category}</p>
+                      <p className="text-ink/80">
+                        <span className="font-semibold text-forest">Format: </span>
+                        {item.formats}
+                      </p>
+                      <p className="text-ink/65 leading-relaxed pt-1 border-t border-forest/5 text-[11px]">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
             {/* Specifications Table */}
-            <div className="rounded-3xl border border-forest/10 bg-white p-5 sm:p-8 shadow-xs overflow-hidden">
+            <div className="rounded-3xl border border-forest/10 bg-white p-5 sm:p-8 shadow-xs w-full min-w-0 overflow-hidden">
               <h2 className="text-base font-bold uppercase tracking-wider text-forest">
                 Technical Specifications
               </h2>
-              <div className="mt-5 overflow-x-auto -mx-5 sm:mx-0">
-                <table className="w-full text-left border-collapse min-w-[300px]">
+              <div className="mt-5 overflow-x-auto w-full">
+                <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="border-b border-forest/15 bg-[#f1ece2]/60">
-                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-forest">
+                      <th className="py-3 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider text-forest w-[35%]">
                         Attribute
                       </th>
-                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-forest">
+                      <th className="py-3 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider text-forest w-[65%]">
                         Specification
                       </th>
                     </tr>
@@ -211,10 +232,10 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                         key={attribute}
                         className={idx % 2 === 0 ? "bg-white" : "bg-[#f8f5ee]/40"}
                       >
-                        <td className="py-3 px-4 font-semibold text-leaf whitespace-nowrap align-top">
+                        <td className="py-3 px-3 sm:px-4 font-semibold text-leaf align-top">
                           {attribute}
                         </td>
-                        <td className="py-3 px-4 text-ink/75 leading-6 align-top">
+                        <td className="py-3 px-3 sm:px-4 text-ink/75 leading-6 align-top break-words">
                           {detail.startsWith("[CONFIRM") ? (
                             <span className="inline-block rounded-sm bg-amber-50 px-2 py-0.5 font-mono text-[11px] font-medium text-amber-800 border border-amber-200/80 break-all">
                               {detail}
@@ -231,7 +252,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             </div>
 
             {/* Key Applications & Uses */}
-            <div className="rounded-3xl border border-forest/10 bg-white p-6 sm:p-8 shadow-xs">
+            <div className="rounded-3xl border border-forest/10 bg-white p-6 sm:p-8 shadow-xs w-full min-w-0">
               <h2 className="text-base font-bold uppercase tracking-wider text-forest">
                 Applications & Commercial Uses
               </h2>
@@ -246,7 +267,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             </div>
 
             {/* Direct Commercial Sourcing CTA */}
-            <div className="rounded-3xl bg-forest p-6 sm:p-9 text-white shadow-xl">
+            <div className="rounded-3xl bg-forest p-6 sm:p-9 text-white shadow-xl w-full min-w-0 overflow-hidden">
               <p className="eyebrow text-gold text-[0.65rem]">Commercial Trade</p>
               <h2 className="mt-1 text-2xl sm:text-3xl font-medium font-display text-white">
                 Inquire for Export Supply
