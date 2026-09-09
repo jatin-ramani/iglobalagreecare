@@ -1,3 +1,9 @@
+export interface ProductVariety {
+  category: string;
+  formats: string;
+  description: string;
+}
+
 export interface Product {
   slug: string;
   title: string;
@@ -7,6 +13,7 @@ export interface Product {
   fullDescription: string[];
   specifications: [string, string][];
   applications: string[];
+  varietiesTable?: ProductVariety[];
 }
 
 export const productCategories = [
@@ -20,6 +27,60 @@ export const productCategories = [
 export type ProductCategory = (typeof productCategories)[number];
 
 export const products: Product[] = [
+  {
+    slug: "indian-rice",
+    title: "Indian Rice (Basmati & Non-Basmati)",
+    category: "Grains",
+    image: "/products/IndianRice.jpg",
+    listDescription: "Premium Indian export rice including aromatic Basmati (1121, 1509), Parboiled Non-Basmati (IR64, PR106), White Raw, and 100% Broken Rice.",
+    fullDescription: [
+      "India is the world's leading grower and exporter of fine-quality rice, offering both high-tonnage Non-Basmati commercial staples and prestigious aromatic Basmati varieties. Our export operations supply leading international importers, government tenders, food manufacturers, and wholesale distribution networks across the globe.",
+      "Directly sourced from certified paddy-growing belts and state-of-the-art Sortex milling facilities across India, our rice undergoes strict mechanical cleaning, destoning, length grading, moisture control, and optical color sorting to guarantee uniform grain length, low broken ratios, and pristine purity.",
+      "We accommodate diverse buyer requirements—from retail consumer pouches to 25kg / 50kg moisture-barrier PP and BOPP woven bags, up to 1-ton jumbo bags and full container loads with complete phytosanitary and lab COA inspection.",
+    ],
+    varietiesTable: [
+      {
+        category: "Parboiled Non-Basmati Rice",
+        formats: "Partially boiled in husk (IR64, PR106, Swarna, Sona Masoori)",
+        description: "The single most exported rice category by physical volume. Widely favored for its firm grain texture, extended shelf-life, retained micronutrients, and high resistance to overcooking.",
+      },
+      {
+        category: "Basmati Rice",
+        formats: "Premium aromatic long-grain (Pusa 1121, 1509, Sugandha, Sharbati, Traditional)",
+        description: "Commands the highest global financial value. World-renowned for exceptional grain elongation upon cooking (over 2x length), exquisite aroma, and fluffy, non-sticky separation.",
+      },
+      {
+        category: "White (Raw) Non-Basmati Rice",
+        formats: "Milled long/medium grain (5%, 15%, 25% broken)",
+        description: "Uniformly polished white rice grains serving as the primary dietary staple for household kitchens, restaurant foodservice, catering, and institutional bulk food programs.",
+      },
+      {
+        category: "Broken Rice",
+        formats: "100% broken grains (byproduct of precision milling)",
+        description: "Highly digestible, cost-effective raw material heavily procured for commercial starch manufacturing, beer brewing, ethanol production, and animal/poultry feeds.",
+      },
+    ],
+    specifications: [
+      ["Available Varieties", "Basmati (1121, 1509, Sugandha, Traditional), Parboiled (IR64, PR106, Swarna), Raw White, 100% Broken"],
+      ["Grain Length", "Basmati: 7.5mm – 8.4mm+ | Non-Basmati: 5.8mm – 6.6mm"],
+      ["Moisture Content", "Max 12% – 14%"],
+      ["Broken Grains", "1% – 2% (Basmati) | 5%, 15%, 25% (Non-Basmati) | 100% (Broken Rice)"],
+      ["Purity / Sortex", "100% Sortex Cleaned & Double Polished"],
+      ["Foreign Matter", "Nil / Max 0.1%"],
+      ["Packaging Options", "1kg, 5kg, 10kg, 25kg, 50kg PP / BOPP / Jute / Non-Woven Bags | 1-Ton Jumbo Bags"],
+      ["Shelf Life", "24 Months (dry, ventilated storage)"],
+      ["Country of Origin", "India"],
+      ["Certifications", "APEDA, FSSAI, Phytosanitary Certificate, SGS / NABL Inspection Available"],
+      ["HS Code", "100630 (Semi-milled / wholly milled rice)"],
+    ],
+    applications: [
+      "Everyday culinary staples and retail consumer food packs",
+      "Premium foodservice, hospitality, catering, and traditional biryani cuisine",
+      "Government food security tenders and humanitarian food assistance",
+      "Industrial starch extraction, beer brewing, and ethanol distillation",
+      "Animal feed and poultry nutrition formulations (Broken Rice)",
+    ],
+  },
   {
     slug: "vermicompost-fertilizer",
     title: "Vermicompost Fertilizer",

@@ -139,6 +139,55 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               </div>
             </div>
 
+            {/* Variety Categories Breakdown (if available) */}
+            {product.varietiesTable && product.varietiesTable.length > 0 && (
+              <div className="rounded-3xl border border-forest/10 bg-white p-5 sm:p-8 shadow-xs overflow-hidden">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  <h2 className="text-base font-bold uppercase tracking-wider text-forest">
+                    Export Categories & Variety Breakdown
+                  </h2>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-gold">
+                    Ranked by Trade Volume & Global Demand
+                  </span>
+                </div>
+                <div className="mt-5 overflow-x-auto -mx-5 sm:mx-0">
+                  <table className="w-full text-left border-collapse min-w-[540px]">
+                    <thead>
+                      <tr className="border-b border-forest/15 bg-[#f1ece2]/60">
+                        <th className="py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-forest w-[28%]">
+                          Category
+                        </th>
+                        <th className="py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-forest w-[34%]">
+                          Typical Formats / Varieties
+                        </th>
+                        <th className="py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-forest w-[38%]">
+                          Description & Market Notes
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-forest/8 text-xs sm:text-sm">
+                      {product.varietiesTable.map((item, idx) => (
+                        <tr
+                          key={item.category}
+                          className={idx % 2 === 0 ? "bg-white" : "bg-[#f8f5ee]/40"}
+                        >
+                          <td className="py-3.5 px-4 font-bold text-leaf align-top whitespace-normal">
+                            {item.category}
+                          </td>
+                          <td className="py-3.5 px-4 font-medium text-ink/80 align-top leading-5">
+                            {item.formats}
+                          </td>
+                          <td className="py-3.5 px-4 text-ink/70 align-top leading-5 text-xs">
+                            {item.description}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
             {/* Specifications Table */}
             <div className="rounded-3xl border border-forest/10 bg-white p-5 sm:p-8 shadow-xs overflow-hidden">
               <h2 className="text-base font-bold uppercase tracking-wider text-forest">
