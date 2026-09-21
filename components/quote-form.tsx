@@ -2,7 +2,13 @@
 import { FormEvent, useState } from "react";
 import { products } from "@/lib/products";
 
-export function QuoteForm({ compact = false }: { compact?: boolean }) {
+export function QuoteForm({
+  compact = false,
+  defaultProduct = "General Inquiry",
+}: {
+  compact?: boolean;
+  defaultProduct?: string;
+}) {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -81,7 +87,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
 
       <label className="text-xs font-semibold text-ink/70">
         Product
-        <select name="product" className={field} defaultValue="General Inquiry">
+        <select name="product" className={field} defaultValue={defaultProduct}>
           <option value="General Inquiry">General Inquiry</option>
           {products.map((p) => (
             <option key={p.slug} value={p.title}>

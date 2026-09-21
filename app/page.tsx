@@ -227,7 +227,7 @@ export default function Home() {
                   View Product Details
                 </Link>
                 <Link
-                  href="/quote"
+                  href="/contact"
                   className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white/80 hover:text-gold transition-colors"
                 >
                   <span>Request commercial quote</span>
